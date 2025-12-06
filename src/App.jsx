@@ -5,6 +5,10 @@ function App() {
   const [getimage, setGetImage] = useState("");
 
   const handleSubmitImage = () => {
+    if (!image) {
+      alert("Please select an image first!");
+      return;
+    }
     const data = new FormData();
     data.append("file", image);
     data.append("upload_preset", "hooddemoapp");
